@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
+var Pages:{
 var `Page1`:{
   title: 'Page1|Shreyas',
   heading:'Page1',
@@ -30,6 +30,7 @@ var `Page3`:{
   date: 'August 29, 2017',
   content:`<p> This is my Third Page.
               </p>`
+};
 };
 function createTemplate(data){
     
