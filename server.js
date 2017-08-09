@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var PageOne={
+var `Page1`:{
   title: 'Page1|Shreyas',
   heading:'Page1',
   date: 'August 9, 2017',
@@ -15,6 +15,20 @@ var PageOne={
              <p> This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app.
              </p>
               <p> This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app. This is my first Web app.
+              </p>`
+};
+var `Page2`:{
+  title: 'Page2|Shreyas',
+  heading:'Page2',
+  date: 'August 19, 2017',
+  content:`<p> This is my Second Page.
+              </p>`
+};
+var `Page3`:{
+  title: 'Page3|Shreyas',
+  heading:'Page3',
+  date: 'August 29, 2017',
+  content:`<p> This is my Third Page.
               </p>`
 };
 function createTemplate(data){
@@ -55,18 +69,16 @@ var htmlTemplate= `
 `;
 return htmlTemplate;
 }
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/Page1',function(req,res){
-    res.send(createTemplate(PageOne));
-});
-
-app.get('/Page2',function(req,res){ res.sendFile(path.join(__dirname, 'ui', 'Page2.html'));
-});
-
-app.get('/Page3',function(req,res){ res.sendFile(path.join(__dirname, 'ui', 'Page3.html'));
+app.get('/:PageName',function(req,res){
+    //PageName=Page1
+    //Pages[PageName]={} content object for Page1
+    var PageName=req.params.PageName;
+    res.send(createTemplate(Pages[PageName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
