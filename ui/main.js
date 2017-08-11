@@ -18,7 +18,7 @@ button.onclick=function(){
   };
   
   //Make the Request
-  response.open('GET', 'http://shreyassarkar98.imad.hasura-app.io/counter', true);
+  request.open('GET', 'http://shreyassarkar98.imad.hasura-app.io/counter', true);
   request.send(null);
   
 };
