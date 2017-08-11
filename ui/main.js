@@ -18,7 +18,8 @@ button.onclick=function(){
   };
   
   //Make the Request
-  response.open('GET', 'http://http://shreyassarkar98.imad.hasura-app.io/');
+  response.open('GET', 'http://http://shreyassarkar98.imad.hasura-app.io/', true);
+  request.send(null);
   //Render the variable in the correct span
   
   counter=counter+1;
