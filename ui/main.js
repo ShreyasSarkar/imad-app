@@ -51,9 +51,8 @@ submit.onclick = function(){
         }
     }
     };
-};
 
 //Make the Request
   request.open('GET', 'http://shreyassarkar98.imad.hasura-app.io/submit-name?name=' +name , true);
   request.send(null);
-
+};
